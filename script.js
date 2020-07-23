@@ -38,6 +38,18 @@ function User ( name, language, grade = grades.Junior ) {
     } ;
 
 }
+
+function newFunction () {
+    console.log (new.target) ;
+}
+
+newFunction () ;
+new newFunction () ;
+
+Number.prototype.toBoolean = function () {
+    console.log (this.valueOf ()) ;
+} ;
+
 const langProg = {} ;
 
 const user = new User ('John', 'C++', grades.Junior );
@@ -54,5 +66,34 @@ user.finishTask () ;
 user.finishTask () ;
 
 console.log ( user.salary, user.tasks ) ;
+let strstr = 'asdjf akfhsf asdasdasd' ;
+let strUpper = str => {
+    let newStr = '';
+    for (let key = 0; key < str.length ; ++key) {
+        if ( !(key % 2) ) {
+            newStr += str[key].toUpperCase() ;
+        }
+        else {
+            newStr += str[key] ;
+        }
+    }
+    return newStr ;
+} ;
+
+console.log ( strUpper (strstr) ) ;
 
 //console.log ( user instanceof User ) ;
+
+const arr = [1, 2, 3] ;
+
+const obje = {
+    one : 'one', 
+    two : 'two'
+} ;
+
+arr.push ('4') ;
+ 
+arr.splice (1, 1) ;
+delete obje.one ;
+
+console.log (arr, obje) ;
